@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://h6w42ryoa8w0"]
+
+[ext_resource type="Script" path="res://scene_1.gd" id="1_7khu4"]
+[ext_resource type="Script" path="res://main.gd" id="1_l1jke"]
+[ext_resource type="Texture2D" uid="uid://cq2l7jiobdwjm" path="res://icon.png" id="2_5bryo"]
+[ext_resource type="Script" path="res://scene_2.gd" id="2_shta8"]
+
+[sub_resource type="Gradient" id="Gradient_s8y2g"]
+colors = PackedColorArray(0, 0.556863, 0, 1, 1, 0.254902, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wtqrr"]
+gradient = SubResource("Gradient_s8y2g")
+fill_from = Vector2(0.454128, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_piy4y"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hayl4"]
+gradient = SubResource("Gradient_piy4y")
+fill_to = Vector2(1, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_l1jke")
+
+[node name="Scene2" type="CanvasLayer" parent="."]
+script = ExtResource("2_shta8")
+
+[node name="TextureRect" type="TextureRect" parent="Scene2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_wtqrr")
+
+[node name="Icon" type="Sprite2D" parent="Scene2"]
+position = Vector2(570, 307)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5bryo")
+
+[node name="Scene1" type="CanvasLayer" parent="."]
+script = ExtResource("1_7khu4")
+
+[node name="TextureRect" type="TextureRect" parent="Scene1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_hayl4")
+
+[node name="Icon" type="Sprite2D" parent="Scene1"]
+position = Vector2(570, 307)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5bryo")
